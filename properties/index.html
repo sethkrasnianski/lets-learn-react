@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello React</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.1/react.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.1/JSXTransformer.js"></script>
+  <script type="text/jsx">
+    var Gorilla = React.createClass({
+      render: function() {
+        return (
+          <article>
+            <h1>{this.props.name}</h1>
+            <p>{this.props.description}</p>
+          </article>
+        );
+      }
+    });
+
+    React.render(<Gorilla name="Eastern" description="The eastern gorilla is a species of the genus Gorilla and the largest living primate." />, document.body);
+  </script>
+</head>
+<body>
+
+</body>
+</html>
