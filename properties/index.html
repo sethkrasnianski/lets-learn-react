@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello React</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.1/react.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.1/JSXTransformer.js"></script>
+  <script type="text/jsx">
+    var Gorilla = React.createClass({
+      getDefaultProps: function() {
+        return {
+          name: "Western",
+          description: "The western gorilla is a great ape, the type species as well as the most populous species of the genus Gorilla."
+        };
+      },
+      propTypes: {
+        name: React.PropTypes.string.isRequired,
+        description: React.PropTypes.string
+      },
+      render: function() {
+        return (
+          <article>
+            <h1>{this.props.name}</h1>
+            <p>{this.props.description}</p>
+          </article>
+        );
+      }
+    });
+
+    React.render(<Gorilla name="Eastern" description="The eastern gorilla is a species of the genus Gorilla and the largest living primate." />, document.body);
+  </script>
+</head>
+<body>
+
+</body>
+</html>
