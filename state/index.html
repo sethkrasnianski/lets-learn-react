@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello React</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.1/react.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.1/JSXTransformer.js"></script>
+  <script type="text/jsx">
+    var Planet = React.createClass({
+      getInitialState: function(){
+        return {
+          name: 'Pluto',
+          description: 'Part of our solar system'
+        }
+      },
+      update: function(e) {
+        var name;
+        if(e.target.value === "") {
+          name = this.getInitialState().name;
+        } else {
+          name = e.target.value
+        }
+
+        this.setState({name: name})
+      },
+      render: function() {
+        return (
+          <section>
+            <input type="text" placeholder="Planet..." onChange={this.update} />
+            <h1>{this.state.name}</h1>
+            <p>{this.state.description}</p>
+          </section>
+        );
+      }
+    });
+
+    React.render(<Planet />, document.body);
+  </script>
+</head>
+<body>
+
+</body>
+</html>
